@@ -1,0 +1,141 @@
+/* ----------------- Genel Ayarlar ----------------- */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #FFEE93;
+    color: #FF7F50;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* kutuyu üstte olacak şekilde */
+    padding-top: 30px;
+}
+
+.container {
+    width: 90%;             /* ekranın %90'ı */
+    max-width: 1050px;      /* büyük ekranlar için sınırlama */
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;       /* görsel ve başlık aynı hizada */
+    justify-content: flex-start; /* sola hizala */
+    gap: 0;                 /* görsel ile başlık arası boşluk */
+    margin-bottom: 20px;       /* altına boşluk ekledik */
+}
+
+.title-logo {
+    width: 150px;               /* logo boyutu */
+    height: auto;              /* orantılı */
+}
+
+
+
+/* ----------------- Kelime Kutusu ----------------- */
+#word-container {
+    font-size: 2rem;        /* temel font boyutu */
+    width: 100%;            /* container kadar genişlik */
+    max-height: 50vh;       /* yükseklik ekranın yarısı kadar */
+    background-color: #fff8dc;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-wrap: wrap;        /* kelimeler alt satıra geçebilir */
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;       /* uzun cümlelerde scroll */
+}
+
+#word-container span {
+    display: inline-block;   
+    margin: 3px 2px;        /* harfler arası boşluk */
+    color: #ccc;
+    transition: color 0.3s;
+    word-break: break-word;  /* kutudan taşarsa alt satıra geç */
+}
+
+#word-container span.space {
+    width: 8px;             /* boşluk genişliği */
+    display: inline-block;
+}
+
+#word-container span.correct { 
+    color: #FF7F50; 
+}
+
+/* ----------------- Mesaj ve Sayılar ----------------- */
+#message {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+#star-container, #count-container {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* ----------------- Liste Kutusu ----------------- */
+#list-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 2px solid #FF7F50;
+    border-radius: 10px;
+    background-color: #fff8dc;
+    padding: 10px;
+    width: 100%;
+}
+
+#sentence-list { 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+#sentence-list li {
+    padding: 5px 10px;
+    margin: 3px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#sentence-list li:hover { 
+    background-color: #FFEE93; 
+}
+
+/* ----------------- Responsive ----------------- */
+/* Tablet */
+@media (max-width: 768px) {
+    #word-container {
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+    #list-container {
+        max-height: 250px;
+    }
+}
+
+/* Telefon */
+@media (max-width: 480px) {
+    #word-container {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    #list-container {
+        max-height: 200px;
+        font-size: 0.9rem;
+    }
+    #star-container, #count-container {
+        font-size: 1.2rem;
+    }
+    #message {
+        font-size: 1.2rem;
+    }
+}
