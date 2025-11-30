@@ -1,7 +1,7 @@
 /* ----------------- Genel Ayarlar ----------------- */
 body {
-    font-family: 'Bubblegum Sans', cursive, sans-serif;
-    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700; /* Kalınlık için 700 kullanabilirsiniz */
     background-color: #FFEE93;
     color: #FF7F50;
     margin: 0;
