@@ -1,3 +1,10 @@
+const hiddenInput = document.getElementById("hidden-input");
+hiddenInput.focus();
+
+document.addEventListener("touchstart", () => {
+    hiddenInput.focus();
+});
+
 const allSentences = [
     "kedi", "elma", "araba", "top", "çanta", "ev", "balon", "masa", "kitap", "kalem",
     "defter", "sandalye", "bardak", "telefon", "çiçek", "bilgisayar", "uçak", "tren", "dolap", "pencere",
