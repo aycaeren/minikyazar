@@ -23,33 +23,47 @@ mode2Btn.onclick = () => {
     document.getElementById("listenInput").focus();
 };
 
+function createStars(count) {
+    const field = document.getElementById("starField");
 
+    for (let i = 0; i < count; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDelay = Math.random() * 4 + "s";
+
+        field.appendChild(star);
+    }
+}
+
+createStars(80);
 
 /* -------------------- TÜM CÜMLELER -------------------- */
-const allSentences = [ "kedi","elma","araba","top","çanta","ev","balon","masa",
-"kitap","kalem","defter","sandalye","bardak","telefon","çiçek","bilgisayar",
-"uçak","tren","dolap","pencere","saat","lamba","kapı","ayakkabı","biberon",
-"domates","portakal","muz","balık","kuş","köpek","fare","tavşan","aslan",
-"kaplan","fil","zebra","maymun","ağaç","çimen","deniz","göl","nehir","dağ",
-"tepe","yol","park","bahçe","mutfak","top yuvarlandı","Kedi uyuyor",
-"Ben elmayı yedim","Okulda oyun oynuyoruz","Ben resim çiziyorum","Kuşlar uçar",
-"Tavşan zıplıyor","Fil çok büyük","Maymun ağaçta","Deniz çok mavi",
-"Göl kenarında yürüyüş","Nehir akar","Dağ çok yüksek","Tepe yeşil","Yol uzundu",
-"Araba hızlı gidiyor","Parkta oyun oynadık","Bahçemize kedi girdi","Domates kırmızı",
-"Portakal tatlı","Muz sarı","Balık yüzer","Fare kaçtı","Aslan kükredi","Saat çalıyor",
-"Lamba yanıyor","Çimen yeşil","Ağaç büyüyor","Kuş cıvıldıyor","Deniz dalgalı",
-"Göl sakin","Nehir temiz","Diloş ve Deroş iyi ki var :)",
-"Diloş ve Deroş macerada","Çaça'nın yeni oyuncağı","Ayıcıklar dans ediyor",
-"Diloş ve Deroş şarkı söylüyor","Çaça ile piknik zamanı","Diloş'un sürprizi",
-"Deroş'un balonları","Ayıcıkların doğum günü partisi","Diloş ve Deroş ormanda keşif yapıyor",
-"Çaça'nın sihirli kitabı","Ayıcıklar kış uykusuna hazırlanıyor",
-"Diloş ve Deroş deniz kenarında","Çaça'nın yeni arkadaşı","Ayıcıkların yaz tatili",
-"Diloş ve Deroş'un gizemli haritası","Çaça ile uzay yolculuğu",
-"Ayıcıklar müzik grubu kuruyor","Diloş ve Deroş'un sihirli macerası",
-"Çaça'nın renkli balonları","Ayıcıklar bahar şenliğinde",
-"Diloş ve Deroş'un lezzetli tarifleri","Çaça'nın eğlenceli oyunları",
-"Ayıcıklar karnavalda","Diloş ve Deroş'un hayvanat bahçesi ziyareti",
-"Çaça ile denizaltı macerası","Ayıcıkların kış festivali"
+const allSentences = ["kedi", "elma", "araba", "top", "çanta", "ev", "balon", "masa",
+    "kitap", "kalem", "defter", "sandalye", "bardak", "telefon", "çiçek", "bilgisayar",
+    "uçak", "tren", "dolap", "pencere", "saat", "lamba", "kapı", "ayakkabı", "biberon",
+    "domates", "portakal", "muz", "balık", "kuş", "köpek", "fare", "tavşan", "aslan",
+    "kaplan", "fil", "zebra", "maymun", "ağaç", "çimen", "deniz", "göl", "nehir", "dağ",
+    "tepe", "yol", "park", "bahçe", "mutfak", "top yuvarlandı", "Kedi uyuyor",
+    "Ben elmayı yedim", "Okulda oyun oynuyoruz", "Ben resim çiziyorum", "Kuşlar uçar",
+    "Tavşan zıplıyor", "Fil çok büyük", "Maymun ağaçta", "Deniz çok mavi",
+    "Göl kenarında yürüyüş", "Nehir akar", "Dağ çok yüksek", "Tepe yeşil", "Yol uzundu",
+    "Araba hızlı gidiyor", "Parkta oyun oynadık", "Bahçemize kedi girdi", "Domates kırmızı",
+    "Portakal tatlı", "Muz sarı", "Balık yüzer", "Fare kaçtı", "Aslan kükredi", "Saat çalıyor",
+    "Lamba yanıyor", "Çimen yeşil", "Ağaç büyüyor", "Kuş cıvıldıyor", "Deniz dalgalı",
+    "Göl sakin", "Nehir temiz", "Diloş ve Deroş iyi ki var :)",
+    "Diloş ve Deroş macerada", "Çaça'nın yeni oyuncağı", "Ayıcıklar dans ediyor",
+    "Diloş ve Deroş şarkı söylüyor", "Çaça ile piknik zamanı", "Diloş'un sürprizi",
+    "Deroş'un balonları", "Ayıcıkların doğum günü partisi", "Diloş ve Deroş ormanda keşif yapıyor",
+    "Çaça'nın sihirli kitabı", "Ayıcıklar kış uykusuna hazırlanıyor",
+    "Diloş ve Deroş deniz kenarında", "Çaça'nın yeni arkadaşı", "Ayıcıkların yaz tatili",
+    "Diloş ve Deroş'un gizemli haritası", "Çaça ile uzay yolculuğu",
+    "Ayıcıklar müzik grubu kuruyor", "Diloş ve Deroş'un sihirli macerası",
+    "Çaça'nın renkli balonları", "Ayıcıklar bahar şenliğinde",
+    "Diloş ve Deroş'un lezzetli tarifleri", "Çaça'nın eğlenceli oyunları",
+    "Ayıcıklar karnavalda", "Diloş ve Deroş'un hayvanat bahçesi ziyareti",
+    "Çaça ile denizaltı macerası", "Ayıcıkların kış festivali"
 ];
 
 
@@ -91,7 +105,7 @@ function loadSentence() {
         if (char === " ") {
             const sp = document.createElement("span");
             sp.classList.add("space");
-            sp.textContent = " "; 
+            sp.textContent = " ";
             wordContainer.appendChild(sp);
             continue;
         }
@@ -150,7 +164,7 @@ document.addEventListener("keydown", e => {
             currentSentence = allSentences[nextIndex];
             loadSentence();
         }
-    } 
+    }
     else {
         wrongSound.play();
     }
@@ -164,21 +178,46 @@ document.addEventListener("keydown", e => {
 let listenWord = "";
 
 const playSoundBtn = document.getElementById("playSoundBtn");
+const nextSoundBtn = document.getElementById("nextSoundBtn");
 const listenInput = document.getElementById("listenInput");
 const checkListenBtn = document.getElementById("checkListenBtn");
 const listenResult = document.getElementById("listenResult");
 
+
+/* --- DİNLE Butonu: Aynı şeyi tekrar okur --- */
 playSoundBtn.onclick = () => {
+    if (!listenWord) {
+        // Eğer daha önce kelime seçilmemişse yeni seç
+        listenWord = allSentences[Math.floor(Math.random() * allSentences.length)];
+    }
+
+    listenResult.textContent = "";
+
+    const utter = new SpeechSynthesisUtterance(listenWord);
+    utter.lang = "tr-TR";
+
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utter);
+};
+
+
+/* --- SONRAKİ Butonu: Yeni kelime seçip okur --- */
+nextSoundBtn.onclick = () => {
     listenInput.value = "";
     listenResult.textContent = "";
 
+    // Yeni kelime/cümle seç
     listenWord = allSentences[Math.floor(Math.random() * allSentences.length)];
 
     const utter = new SpeechSynthesisUtterance(listenWord);
     utter.lang = "tr-TR";
+
+    speechSynthesis.cancel();
     speechSynthesis.speak(utter);
 };
 
+
+/* --- CEVABI KONTROL ETME --- */
 checkListenBtn.onclick = () => {
     const user = listenInput.value.trim().toLowerCase();
 
