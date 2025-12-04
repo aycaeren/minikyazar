@@ -10,23 +10,47 @@
 </head>
 
 <body>
-    <div class="container" id="game-screen">
+
+    <div class="container">
 
         <div class="title-container">
             <img src="çaça.png" alt="MinikYazar Logo" class="title-logo">
             <h1 style="font-size: 3rem;">MinikYazar</h1>
         </div>
 
-        <div id="word-container"></div>
-        <p id="message"></p>
-        <div id="star-container">⭐: 0</div>
-        <div id="count-container">Tamamlanan: 0</div>
-        <div id="list-container">
-            <ul id="sentence-list"></ul>
+        <!-- MOD SEÇİMİ -->
+        <div id="mode-buttons">
+            <button id="mode1Btn">1. Mod: Yazma Oyunu</button>
+            <button id="mode2Btn">2. Mod: Dinle – Duyduğunu Yaz</button>
         </div>
+
+        <!-- 1. MOD -->
+        <div id="mode1" class="screen hidden">
+            <div id="word-container"></div>
+            <div id="star-container">⭐: 0</div>
+            <div id="count-container">Tamamlanan: 0</div>
+
+            <div id="list-container">
+                <ul id="sentence-list"></ul>
+            </div>
+        </div>
+
+        <!-- 2. MOD -->
+        <div id="mode2" class="screen hidden">
+            <button id="playSoundBtn" class="sound-btn">🔊 Dinle</button>
+
+            <input type="text" id="listenInput" placeholder="Duyduğunu yaz...">
+
+            <button id="checkListenBtn" class="check-btn">Kontrol Et</button>
+
+            <p id="listenResult"></p>
+        </div>
+
     </div>
 
-    <input type="text" id="hidden-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <!-- Gizli input (1. mod için) -->
+    <input type="text" id="hidden-input" autocomplete="off" autocorrect="off" autocapitalize="off"
+        spellcheck="false">
 
     <script src="app.js"></script>
 </body>
