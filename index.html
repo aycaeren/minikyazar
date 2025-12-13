@@ -52,10 +52,23 @@
     </div>
 
     <!-- Gizli input (1. mod için) -->
-    <input type="text" id="hidden-input" autocomplete="off" autocorrect="off" autocapitalize="off"
-        spellcheck="false">
+    <input type="text" id="hidden-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 
     <script src="app.js"></script>
+
+    <div id="gameModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎉 Tebrikler!</h2>
+            <p>5 yıldız kazandın ⭐</p>
+            <p>Oyun oynamak ister misin?</p>
+            <div class="modal-buttons">
+                <button id="playNowBtn" class="sound-btn">🎮 Oyna</button>
+                <button id="laterBtn" class="sound-btn">Sonra</button>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
