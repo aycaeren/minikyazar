@@ -66,7 +66,7 @@ const enemy = {
   x: 400,
   y: 200,
   size: 30,
-  speed: 2
+  speed: 1
 };
 
 const keys = {};
@@ -175,8 +175,8 @@ function update() {
   /* Star (AYNI) */
   if (collision(player, star)) {
     score++;
-    player.speed += 0.4;
-    enemy.speed += 0.25;
+    player.speed += 0.3;
+    enemy.speed += 0.2;
 
     star.x = Math.random() * 460;
     star.y = Math.random() * 360;
@@ -193,15 +193,23 @@ function update() {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "pink";
-  ctx.fillRect(player.x, player.y, player.size, player.size);
+  // Emoji fontu kare boyutuna göre ayarlayalım
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
 
-  ctx.fillStyle = "green";
-  ctx.fillRect(star.x, star.y, star.size, star.size);
+  // Player (örnek: 🤤​)
+  ctx.font = player.size + "px Arial";
+  ctx.fillText("🤤​", player.x + player.size, player.y + player.size);
 
-  ctx.fillStyle = "red";
-  ctx.fillRect(enemy.x, enemy.y, enemy.size, enemy.size);
+  // Star (örnek: 🍕​)
+  ctx.font = star.size + "px Arial";
+  ctx.fillText("🍕​", star.x + star.size, star.y + star.size);
+
+  // Enemy (örnek: 👾)
+  ctx.font = enemy.size + "px Arial";
+  ctx.fillText("👾", enemy.x + enemy.size, enemy.y + enemy.size);
 }
+
 
 function loop() {
   update();

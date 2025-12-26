@@ -26,7 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
         mode2.classList.remove("hidden");
         mode1.classList.add("hidden");
         document.getElementById("listenInput").focus();
+        updateListenStars(); // ⭐ mod değişince güncelle
     };
+
 
     function createStars(count) {
         const field = document.getElementById("starField");
@@ -88,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentSentence = "";
     let letterIndex = 0;
     let completedCount = 0;
-    let stars = 0;
 
     allSentences.forEach(s => {
         const li = document.createElement("li");
@@ -127,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateCount() {
         countContainer.textContent = `Tamamlanan: ${completedCount}`;
-        starContainer.textContent = `⭐ ${totalStars} | 🎮 ${gameTickets}`;
+        starContainer.textContent = `⭐ ${totalStars}`;
     }
 
     document.addEventListener("keydown", e => {
@@ -157,22 +158,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 speechSynthesis.speak(utter);
 
                 completedCount++;
+                updateCount(); // her tamamlamada güncellensin
 
                 if (completedCount % 5 === 0) {
                     applauseSound.play();
-
-                    totalStars++; // ⭐ yıldız kazanıldı
+                    totalStars++;
                     localStorage.setItem("totalStars", totalStars);
-
-                    updateCount();
-
-                    // ⭐ HER YILDIZDA SOR
                     gameModal.classList.remove("hidden");
                 }
-
-
-
-                updateCount();
 
                 const nextIndex = Math.floor(Math.random() * allSentences.length);
                 currentSentence = allSentences[nextIndex];
@@ -203,6 +196,21 @@ document.addEventListener("DOMContentLoaded", () => {
               2. MOD – Sesle Kelime/Cümle Yazma
     ------------------------------------------------------- */
     let listenWord = "";
+    let listenCorrectCount = 0;
+    const listenStarInfo = document.getElementById("listenStarInfo");
+    const listenCountInfo = document.getElementById("listenCountInfo");
+
+    function updateListenStars() {
+        if (listenStarInfo) {
+            listenStarInfo.textContent = `⭐ ${totalStars}`;
+        }
+    }
+
+    function updateListenCount() {
+        if (listenCountInfo) {
+            listenCountInfo.textContent = `Tamamlanan: ${listenCorrectCount}`;
+        }
+    }
 
     const playSoundBtn = document.getElementById("playSoundBtn");
     const nextSoundBtn = document.getElementById("nextSoundBtn");
@@ -252,10 +260,26 @@ document.addEventListener("DOMContentLoaded", () => {
             listenResult.style.color = "green";
             listenResult.textContent = "✔ Harikasınn :)";
             correctSound.play();
-        } else {
-            listenResult.style.color = "red";
-            listenResult.textContent = "❌ Doğrusu: " + listenWord;
-            wrongSound.play();
+
+            totalStars++;
+            listenCorrectCount++;
+
+            localStorage.setItem("totalStars", totalStars);
+
+            updateCount();         // 1. mod
+            updateListenStars();   // ⭐
+            updateListenCount();   // ✅ tamamlanan
+
+            if (listenCorrectCount % 5 === 0) {
+                applauseSound.play();
+                gameModal.classList.remove("hidden");
+                listenInput.value = "";
+            }
         }
+
+
     };
+    updateListenStars();
+    updateListenCount();
+
 });

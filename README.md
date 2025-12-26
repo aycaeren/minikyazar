@@ -1,7 +1,6 @@
-# MinikYazar
+# Yazı Yıldızı
 
-MinikYazar, kullanıcıların basit ve eğlenceli bir şekilde yazı yazabileceği interaktif bir web sitesidir. Proje, HTML, CSS ve JavaScript kullanılarak geliştirilmiştir.
-
+Yazı Yıldızı, kullanıcıların basit ve eğlenceli bir şekilde yazı yazabileceği interaktif bir web sitesidir. Proje, HTML, CSS ve JavaScript kullanılarak geliştirilmiştir.
 
 ---
 
@@ -24,7 +23,7 @@ MinikYazar, kullanıcıların basit ve eğlenceli bir şekilde yazı yazabilece�
 
 ## 🌐 Canlı Site
 
-MinikYazar’ı buradan ziyaret edebilirsiniz: (https://aycaeren.github.io/minikyazar/).
+Yazı Yıldızı’nı buradan ziyaret edebilirsiniz: (https://aycaeren.github.io/YaziYildizi/).
 
 ---
 
@@ -44,7 +43,7 @@ MinikYazar’ı buradan ziyaret edebilirsiniz: (https://aycaeren.github.io/minik
 
 ## 🎮 Oyun Güncellemesi
 
-MinikYazar’a yapılan son güncellemeyle birlikte siteye **küçük ve eğlenceli bir mini oyun** eklendi. Bu oyun, kullanıcıyı yazı yazmaya teşvik eden **ödül tabanlı bir deneyim** sunar.
+Yazı Yıldızı’na yapılan son güncellemeyle birlikte siteye **küçük ve eğlenceli bir mini oyun** eklendi. Bu oyun, kullanıcıyı yazı yazmaya teşvik eden **ödül tabanlı bir deneyim** sunar.
 
 ### 🎯 Oyunun Amacı
 Mini oyunun amacı, kullanıcıların doğru yazım yapma alışkanlığını desteklemek ve bu süreci daha eğlenceli hale getirmektir. Kullanıcılar yazı yazdıkça ve doğru cevaplar verdikçe **yıldız kazanır**, kazandıkları yıldızlar sayesinde oyunu oynama hakkı elde eder.
@@ -73,5 +72,5 @@ oynanabilir. Oyun, yazı deneyimini bölmeden, **kontrollü ve anlamlı aralıkl
 - Dokunmatik ekranlar için optimize edilmiş kontrol mekanizması
 - Hafif ve performans odaklı oyun yapısı
 
-Oyun, MinikYazar’ın minimal ve eğitici yapısını destekleyecek şekilde tasarlanmış olup tamamen **frontend teknolojileri** kullanılarak geliştirilmiştir.
+Oyun, Yazı Yıldızı’nın minimal ve eğitici yapısını destekleyecek şekilde tasarlanmış olup tamamen **frontend teknolojileri** kullanılarak geliştirilmiştir.
 
